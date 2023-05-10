@@ -4,7 +4,6 @@ import { Chart as ChartJS } from 'chart.js/auto'
 const Chartsbar = ({ datach }) => {
   return (
     <div>
-      Chart
       <Bar data={datach} />
     </div>
   )

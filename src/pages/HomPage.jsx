@@ -21,7 +21,7 @@ const HomPage = () => {
      datasets:[
        {
         label:[datafile.map(item => item.typefile)],
-        data:[Num,Num2],
+        data:[00,00],
         backgroundColor:'#161e83'
        }
     ]
