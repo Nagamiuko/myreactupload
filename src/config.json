@@ -1,10 +1,10 @@
 {
-   "apiUrl":"https://lazy-jade-python-suit.cyclic.app/api/all-fileuploads",
-   "apiDataUser":"https://lazy-jade-python-suit.cyclic.app/api/all-file-user",
-   "apiUserLogin":"https://lazy-jade-python-suit.cyclic.app/api/login",
-   "apiUserUpdata":"https://lazy-jade-python-suit.cyclic.app/api/profile",
-   "apiUserProfile":"https://lazy-jade-python-suit.cyclic.app/api/user/profile",
-   "apiUserDataDelete":"https://lazy-jade-python-suit.cyclic.app/api/delete-file",
-   "apiUserCreateData":"https://lazy-jade-python-suit.cyclic.app/api/create-uploads",
-   "apiDataViews":"https://lazy-jade-python-suit.cyclic.app/api/item-one"
+   "apiUrl":"https://apiupcloud2.onrender.com/api/all-fileuploads",
+   "apiDataUser":"https://apiupcloud2.onrender.com/api/all-file-user",
+   "apiUserLogin":"https://apiupcloud2.onrender.com/api/login",
+   "apiUserUpdata":"https://apiupcloud2.onrender.com/api/profile",
+   "apiUserProfile":"https://apiupcloud2.onrender.com/api/user/profile",
+   "apiUserDataDelete":"https://apiupcloud2.onrender.com/api/delete-file",
+   "apiUserCreateData":"https://apiupcloud2.onrender.com/api/create-uploads",
+   "apiDataViews":"https://apiupcloud2.onrender.com/api/item-one"
 }
