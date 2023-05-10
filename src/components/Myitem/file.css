@@ -1,0 +1,67 @@
+#customers {
+  position: relative;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  box-shadow: 0 5px 13px rgba(17, 0, 255, 0.6);
+
+}
+
+#customers td, #customers th {
+  border: 1px solid #0015ff;
+  padding: 10px;
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #0492ff;
+  color: white;
+}
+#customers td{
+  position: relative;
+  text-align: center;
+  color: rgb(140, 132, 255);
+}
+.item-my-file{
+    position: relative;
+    width: 100%;
+    height: calc(90vh - 13vh);
+    background:transparent; 
+    overflow-y:auto;
+}
+button{
+  border-radius: 3px;
+}
+.btn-e{
+  background: rgb(255, 162, 0);
+  color: white;
+  margin-bottom: 2px;
+}
+.btn-d{
+  color: white;
+  background: blue;
+  margin-bottom: 2px;
+}
+.btn-v{
+  color: white;
+  background: rgb(1, 163, 1);
+  margin-bottom: 2px;
+}
+.btn-de{
+  color: white;
+  background:red;
+  margin-bottom: 2px;
+}
+.btn-d-pdf{
+  color: white;
+  background:rgb(255, 0, 140);
+  margin-bottom: 2px;
+}

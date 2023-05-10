@@ -1,0 +1,10 @@
+{
+   "apiUrl":"https://lazy-jade-python-suit.cyclic.app/api/all-fileuploads",
+   "apiDataUser":"https://lazy-jade-python-suit.cyclic.app/api/all-file-user",
+   "apiUserLogin":"https://lazy-jade-python-suit.cyclic.app/api/login",
+   "apiUserUpdata":"https://lazy-jade-python-suit.cyclic.app/api/profile",
+   "apiUserProfile":"https://lazy-jade-python-suit.cyclic.app/api/user/profile",
+   "apiUserDataDelete":"https://lazy-jade-python-suit.cyclic.app/api/delete-file",
+   "apiUserCreateData":"https://lazy-jade-python-suit.cyclic.app/api/create-uploads",
+   "apiDataViews":"https://lazy-jade-python-suit.cyclic.app/api/item-one"
+}

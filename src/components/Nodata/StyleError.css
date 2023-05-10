@@ -1,0 +1,24 @@
+div.No-Fun{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: calc(100vh);
+   background: #131424;
+}
+.No-Fun h1{
+   color: rgb(172, 172, 172);
+}
+.box-error{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 600px;
+   height: 200px;
+   background: white;
+   border-radius: 10px;
+   border: 2px solid #ff0000;
+}
+.div{
+   color: #161e83;
+}
