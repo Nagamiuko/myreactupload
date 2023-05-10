@@ -5,10 +5,12 @@ import { useParams } from 'react-router-dom'
 import Views from '../components/Viewfile/Views'
 import config from '../config.json'
 import axios from 'axios'
+import { TitleTab } from '../GenaralTitle'
 const ViewItem = () => {
    const {fileid} = useParams()
    const [Loading, setloading] = useState(false)
    const [Datas , setData] = useState('')
+   TitleTab(`HOME | View Item ${Datas.name}`)
    useEffect(()=>{
       const fetchData = async () =>{
          const { data } = await axios.get(`${config.apiDataViews}/${fileid}`)

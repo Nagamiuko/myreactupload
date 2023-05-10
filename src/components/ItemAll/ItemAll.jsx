@@ -58,7 +58,7 @@ return(
                                             </button>
                                         </>
                                    }
-                                <button onClick={()=> navigator(`/my-view/${da._id}`)} className='btn-v'>View</button>
+                                <button onClick={()=> navigator(`/my-view/${da._id}/${da.name}`)} className='btn-v'>View</button>
                               </td>
                           </tr>
                       ))} 

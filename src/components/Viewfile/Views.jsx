@@ -26,7 +26,9 @@ const Views = ({DataView,Loading}) => {
             <div className="row">
                Name: {DataView.name+'.'+DataView.typefile} <br />
                Comments: {DataView.comments}
-               <img src={DataView.url} alt="" />
+               <div className="img-box">
+                   <img src={DataView.url} alt="" />
+               </div>
             </div>
             ):<div className="row">
                   Name: {DataView.name+'.'+DataView.typefile} <br />

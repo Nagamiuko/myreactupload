@@ -20,7 +20,7 @@ const Router = () => {
          <Route path='/my-items' element={<MyItem/>}/>
          <Route path='/my-upload/' element={<Upload/>}/>
          <Route path='/my-edit/' element={<Error/>}/>
-         <Route path='/my-view/:fileid' element={<ViewItem/>}/>
+         <Route path='/my-view/:fileid/:title' element={<ViewItem/>}/>
          <Route path='/my/profile/' element={<ProfileUpdata/>}/>
          <Route path='*' element={<ErrorPage/>}/>
       </Routes>

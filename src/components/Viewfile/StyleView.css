@@ -45,3 +45,13 @@
    color: white;
 }
 
+.img-box{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 2rem;
+}
+.img-box img {
+   width: 600px;
+   height: 800px;
+}

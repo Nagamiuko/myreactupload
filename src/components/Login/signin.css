@@ -1,0 +1,55 @@
+.head-h{
+   width: 100%;
+   height: calc(100vh - 90px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.log-l{
+   width: 600px;
+   height: 500px;
+   background-color: rgb(255, 255, 255);
+   border-radius: 10px;
+   box-shadow: 0 5px 15px rgba(56, 56, 56, 0.5);
+}
+.log-l h1{
+   padding: 20px;
+   text-align: center;
+}
+.set-box-row{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.set-box-row label{
+  position: relative;
+  right: 13rem;
+  margin-bottom: 10px;
+}
+.set-box-row input{
+   padding: 20px;
+   width: 500px;
+   height: 45px;
+   margin-bottom: 10px;
+   outline: none;
+   border-radius: 5px;
+   border: none;
+   background: #eee;
+}
+.set-box-row input:focus{
+   outline: none;
+}
+.set-box-row .btn-l{
+   position: relative;
+   right:1rem;
+   top: 8rem;
+   width: 500px;
+   height: 40px;
+   color: white;
+   background: #5c00a8;
+   border-radius: 5px;
+   font-size: 20px;
+}
+.btn-l:hover{
+   background: #520f8a;
+}

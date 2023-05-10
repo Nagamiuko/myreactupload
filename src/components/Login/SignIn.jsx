@@ -2,10 +2,10 @@ import React from 'react'
 import { useState,useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import config from '../../config.json'
-import Header from '../Header/Header'
 import { AuthContext } from '../context/AuthContext'
 import Swal from 'sweetalert2'
 import axios from 'axios'
+import './signin.css'
 const SingIn = () => {
   // const [popregister, setPopregister]= useState(false)
   const {userid} = useParams()
@@ -24,9 +24,7 @@ const handClick = async (e) =>{
    try{
         const res = await axios.post(config.apiUserLogin,creden )
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data })
-        if(loading){
-           <p>Loading....</p>
-          }
+        if(loading) return <p>Loading....</p>      
           Swal.fire({
             icon: 'success',
             title: 'ยินดีต้อนรับ',
@@ -46,27 +44,26 @@ const handClick = async (e) =>{
    }
   return (
     <div>
-      <Header/>
         <div className='head-h'>
-                <h1>เข้าสู่ระบบ</h1>
-          </div>
           <div className='log-l'>
-              <table className='font-color-f'>ชื่อผู้ใช้งาน</table>
+                <h1>เข้าสู่ระบบ</h1>
+             <div className="set-box-row">
+              <label className='font-color-f'>ชื่อผู้ใช้งาน</label>
               <input className='font-pp' type="email"
                 id="username" 
                 placeholder='ชื่อผู้ใช้งาน'
                 onChange={handleChange}
                 />
-              <table className='font-color-f'>รหัสผ่าน</table>
+              <label className='font-color-f'>รหัสผ่าน</label>
               <input className='font-pp' type="password" 
                 id="password" 
                 placeholder='รหัสผ่าน' 
                 onChange={handleChange}
                 />
+                <button className='btn-l' type="submit" dispatch={loading} onClick={handClick}>เข้าสู่ระบบ</button>
+            </div>
           </div>
-          <div className='btn-log '>
-              <button className='btn-l' type="submit" disabled={loading} onClick={handClick}>เข้าสู่ระบบ</button>
-          </div>
+        </div>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import './file.css'
-import './loading.css'
+import './loadings.css'
 import { useNavigate } from 'react-router-dom'
 import config from '../../config.json'
 import axios from 'axios'
@@ -13,10 +13,10 @@ const ItemAll = ({Data , Loading }) => {
    if(!Loading){
       return (
          <div className="lo-lo">
-            <p>Loading...</p>
-            <div className="main">
-             <div className="box"></div>
-           </div>
+             <p>Loading...</p>
+              <div className="main">
+                <div className="box"></div>
+              </div>
          </div>
       )
     } 
@@ -72,7 +72,7 @@ return(
                                         </>
                                    }
                                   <button className='btn-e' onClick={() => navigator('/my-edit')}>Edit</button>
-                                  <button onClick={()=> navigator(`/my-view/${da._id}`)} className='btn-v'>View</button>
+                                  <button onClick={()=> navigator(`/my-view/${da._id}/${da.name}`)} className='btn-v'>View</button>
                                   <button onClick={ ()=>handleDelete(da)} className='btn-de'>Delete</button>
                               </td>
                           </tr>   
