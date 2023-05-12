@@ -30,8 +30,8 @@ const handClick = async (e) =>{
             title: 'ยินดีต้อนรับ',
             text: 'ขอบคุณที่ร่วมเป็นสมาชิกของเรา 😍',
            })
-         navigate(`/dashboard`)
-        //  window.location= '/dashboard'
+        //  navigate(`/dashboard`)
+          window.location= '/dashboard'
     }catch(err){
        dispatch({type:"LOGIN_FAILURE", payload:err.response.data})
           Swal.fire({
