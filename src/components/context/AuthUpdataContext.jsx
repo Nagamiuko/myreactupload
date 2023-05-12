@@ -1,5 +1,5 @@
-import { createContext, useEffect, useReducer } from "react";
-
+import { createContext, useContext, useEffect, useReducer } from "react";
+import { AuthContext } from "./AuthContext";
 const UPDATA_STATE = {
   users: JSON.parse(localStorage.getItem('user')) || null,
   loading: false,

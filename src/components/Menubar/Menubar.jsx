@@ -5,10 +5,12 @@ import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthUpdataContext } from '../context/AuthUpdataContext'
 import Logout from './Logout'
+import { AuthContext } from '../context/AuthContext'
 const Menubar = () => {
    const navigator = useNavigate()
    const [pop, setPop] = useState(false)
    const { users } = useContext(AuthUpdataContext)
+   const { user } = useContext(AuthContext)
   return (
     <div>
       <div className="box-bg-mm">
@@ -23,8 +25,8 @@ const Menubar = () => {
          </nav>
          <div className="box-u-r">
              <button onClick={setPop.bind(this,true)} className="sty-us">
-                 <img src={users.avatar_url ? users.avatar_url:avatar } alt="" width={35} height={35}/>
-                <h4 style={{marginLeft:'5px'}}>: {users.username}</h4>
+                 <img src={user.avatar_url ? user.avatar_url:avatar } alt="" width={35} height={35}/>
+                <h4 style={{marginLeft:'5px'}}>: {user.username}</h4>
              </button>
               <div>
                 { pop &&  <Logout setPop={setPop}/>}
