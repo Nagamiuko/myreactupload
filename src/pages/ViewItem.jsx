@@ -18,8 +18,7 @@ const ViewItem = () => {
          setData(data)
       }
       fetchData()
-   },[])
-   console.log(fileid)
+   },[fileid])
   return (
     <div>
       <Header/>

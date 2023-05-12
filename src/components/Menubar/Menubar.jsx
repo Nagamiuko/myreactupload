@@ -3,14 +3,12 @@ import avatar from '../../assets/avatar/user.png'
 import './Menubar.css'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { AuthContext } from '../context/AuthContext'
+import { AuthUpdataContext } from '../context/AuthUpdataContext'
 import Logout from './Logout'
-import useFetchUser from '../hooks/UserProfile'
 const Menubar = () => {
    const navigator = useNavigate()
    const [pop, setPop] = useState(false)
-   const { user } = useContext(AuthContext)
-   const {datauser, loadings , error} = useFetchUser(`${user._id}`)
+   const { users } = useContext(AuthUpdataContext)
   return (
     <div>
       <div className="box-bg-mm">
@@ -25,8 +23,8 @@ const Menubar = () => {
          </nav>
          <div className="box-u-r">
              <button onClick={setPop.bind(this,true)} className="sty-us">
-                 <img src={datauser.avatar_url ? datauser.avatar_url:avatar } alt="" width={25} height={25}/>
-                <h4 style={{marginLeft:'5px'}}>: {datauser.username}</h4>
+                 <img src={users.avatar_url ? users.avatar_url:avatar } alt="" width={35} height={35}/>
+                <h4 style={{marginLeft:'5px'}}>: {users.username}</h4>
              </button>
               <div>
                 { pop &&  <Logout setPop={setPop}/>}

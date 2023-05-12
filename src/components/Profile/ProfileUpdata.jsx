@@ -1,28 +1,16 @@
-import React, { useState,useEffect, useContext, useRef } from 'react'
+import React, { useState, useContext } from 'react'
 import './pro.css'
 import config from '../../config.json'
-import {AuthContext,AuthUpdataContext} from '../context/AuthContext'       
+import {AuthUpdataContext} from '../context/AuthUpdataContext'       
 import avatar from '../../assets/avatar/user.png'
 import axios from 'axios'
-import useFetchUser from '../hooks/UserProfile'
 const ProfileUpdata = () => {
-   const {user} = useContext(AuthContext)
-   const {datauser , loadings ,error} = useFetchUser(`${user._id}`)
-   const {userUpdata} = useContext(AuthUpdataContext)
-   // const [userdataup , setUserDataUp] = useState({
-   //        username:undefined,
-   //        password:undefined
-   // })
+   const {users , loading ,dispatchup } = useContext(AuthUpdataContext)
    const [avatarUp , setAvatarUp] = useState([])
    const [image, setFileImage] = useState("")
    const [username, setName] = useState()
    const [password, setPassword] = useState()
-   const [passwordOld, setPasswordOld] = useState()
-    console.log(username , password)
-   const [loading ,setLoading] = useState(false)
-   // const change = (event) =>{
-   //     setUserDataUp((prev) => ({...prev,[event.target.id]: event.target.value}))
-   // }
+
    const previewFile =(file)=> {
    const reader  = new FileReader()
    reader.readAsDataURL(file)
@@ -53,8 +41,8 @@ const ProfileUpdata = () => {
          alert('Old Password No Data !' )
         }
         else{
-          await axios.put(`${config.apiUserUpdata}/${user._id}`,data,configs)
-          setLoading(true)
+         const res =  await axios.put(`${config.apiUserUpdata}/${users._id}`,data,configs)
+         dispatchup({type: "UPDATA_SUCCESS" , payload: res.data})
           if(loading){
             <div className="lo-lo">
              <p>Loading...</p>
@@ -64,7 +52,7 @@ const ProfileUpdata = () => {
            </div>
            }
           alert('Updata Sucessfylly !')
-          window.location = '/my/profile'              
+          window.location = '/my/profile'                       
         }
         }catch(err){
           console.log(err)
@@ -81,7 +69,7 @@ const ProfileUpdata = () => {
                      id='username'
                      name="username" 
                      // value={datauser.username}
-                     placeholder= {datauser.username}
+                     placeholder= {users.username}
                      onChange={e => setName(e.target.value)}/>
                   <label htmlFor="">Old Password</label>
                   <small>*ต้องระบุ</small>
@@ -97,7 +85,7 @@ const ProfileUpdata = () => {
                   <div className="img-r">
                     <div className="img-sty">
                      <label className='sty-im' htmlFor='image'>  
-                        <img className='img-cover-co' src={image ? image : datauser.avatar_url || avatar}/>
+                        <img className='img-cover-co' src={image ? image : users.avatar_url || avatar}/>
                         <h4 className='h4'>Edit</h4>
                      </label> 
                     </div>
