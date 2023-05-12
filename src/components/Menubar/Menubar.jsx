@@ -9,7 +9,6 @@ import { AuthContext } from '../context/AuthContext'
 const Menubar = () => {
    const navigator = useNavigate()
    const [pop, setPop] = useState(false)
-   const { users } = useContext(AuthUpdataContext)
    const { user } = useContext(AuthContext)
   return (
     <div>

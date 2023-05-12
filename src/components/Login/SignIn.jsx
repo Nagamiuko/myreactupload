@@ -7,8 +7,6 @@ import Swal from 'sweetalert2'
 import axios from 'axios'
 import './signin.css'
 const SingIn = () => {
-  // const [popregister, setPopregister]= useState(false)
-  const {userid} = useParams()
   const [creden, setCreder] = useState({
      username:undefined,
      password:undefined,
@@ -24,14 +22,14 @@ const handClick = async (e) =>{
    try{
         const res = await axios.post(config.apiUserLogin,creden )
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data })
-        if(loading) return <p>Loading....</p>      
-          Swal.fire({
-            icon: 'success',
-            title: 'ยินดีต้อนรับ',
-            text: 'ขอบคุณที่ร่วมเป็นสมาชิกของเรา 😍',
-           })
-        //  navigate(`/dashboard`)
-          window.location= '/dashboard'
+        if(loading)  return <p>Loading....</p> 
+        Swal.fire({
+          icon: 'success',
+          title: 'ยินดีต้อนรับ',
+          text: 'ขอบคุณที่ร่วมเป็นสมาชิกของเรา 😍',
+        })
+         navigate('/dashboard')
+        //  window.location= '/dashboard'
     }catch(err){
        dispatch({type:"LOGIN_FAILURE", payload:err.response.data})
           Swal.fire({

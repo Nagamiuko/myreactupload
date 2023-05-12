@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react'
 import './pro.css'
 import config from '../../config.json'
 import {AuthUpdataContext} from '../context/AuthUpdataContext'       
+import { AuthContext } from '../context/AuthContext'
 import avatar from '../../assets/avatar/user.png'
 import axios from 'axios'
 const ProfileUpdata = () => {
    const {users , loading ,dispatchup } = useContext(AuthUpdataContext)
+   const {user} = useContext(AuthContext)
    const [avatarUp , setAvatarUp] = useState([])
    const [image, setFileImage] = useState("")
    const [username, setName] = useState()
@@ -41,7 +43,7 @@ const ProfileUpdata = () => {
          alert('Old Password No Data !' )
         }
         else{
-         const res =  await axios.put(`${config.apiUserUpdata}/${users._id}`,data,configs)
+         const res =  await axios.put(`${config.apiUserUpdata}/${user._id}`,data,configs)
          dispatchup({type: "UPDATA_SUCCESS" , payload: res.data})
           if(loading){
             <div className="lo-lo">
@@ -69,7 +71,7 @@ const ProfileUpdata = () => {
                      id='username'
                      name="username" 
                      // value={datauser.username}
-                     placeholder= {users.username}
+                     placeholder= {user.username}
                      onChange={e => setName(e.target.value)}/>
                   <label htmlFor="">Old Password</label>
                   <small>*ต้องระบุ</small>
@@ -85,7 +87,7 @@ const ProfileUpdata = () => {
                   <div className="img-r">
                     <div className="img-sty">
                      <label className='sty-im' htmlFor='image'>  
-                        <img className='img-cover-co' src={image ? image : users.avatar_url || avatar}/>
+                        <img className='img-cover-co' src={image ? image : user.avatar_url || avatar}/>
                         <h4 className='h4'>Edit</h4>
                      </label> 
                     </div>

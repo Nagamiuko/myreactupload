@@ -6,7 +6,7 @@ import config from '../../config.json'
 import axios from 'axios'
 import FileDownload from 'js-file-download'
 import { AuthContext } from '../context/AuthContext'
-const ItemAll = ({Data , Loading }) => {
+const ItemAll = ({Data , Loading , NoData }) => {
   const {user} = useContext(AuthContext)
   const navigator = useNavigate()
   const [Query , setQuery] = useState('')
@@ -49,7 +49,7 @@ return(
                       <th>Data</th>
                       <th>Tools</th>
                   </tr>
-                      {Data.filter(da=> da.name.toLowerCase().includes(Query)||da.user.username.toLowerCase().includes(Query)).map((da,index)=>(
+                      { Data.filter(da=> da.name.toLowerCase().includes(Query)||da.user.username.toLowerCase().includes(Query)).map((da,index)=>(
                           <tr key={da._id}>   
                               <td>{index+1}</td>
                               <td>{da.user.username}</td>
@@ -76,7 +76,7 @@ return(
                                   <button onClick={ ()=>handleDelete(da)} className='btn-de'>Delete</button>
                               </td>
                           </tr>   
-                      ))} 
+                      ))}
                      </tbody>
                 </table>
               </div>      
