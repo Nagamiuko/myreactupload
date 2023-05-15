@@ -39,7 +39,10 @@ return(
                       {Data.filter(da=> da.name.toLowerCase().includes(Query)||da.user.username.toLowerCase().includes(Query)).map((da,i)=>(
                           <tr key={da._id}>   
                               <td>{i+1}</td>
-                              <td>{da.user.username}</td>
+                              <td>
+                                <div className="user-avatar">
+                                {da.user.username} <img src={da.user.avatar_url} alt="" width={45} height={45} style={{borderRadius:'50px'}}/></div>
+                              </td>
                               <td><img src={da.iconsfile} alt="" width={40} height={40}/></td>
                               <td>{da.name}</td>
                               <td>{da.typefile}</td>
