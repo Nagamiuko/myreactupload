@@ -43,7 +43,11 @@ return(
                                 <div className="user-avatar">
                                 {da.user.username} <img src={da.user.avatar_url} alt="" width={45} height={45} style={{borderRadius:'50px'}}/></div>
                               </td>
-                              <td><img src={da.iconsfile} alt="" width={40} height={40}/></td>
+                              <td>
+                                <div className="icon-sty">
+                                    <img src={da.iconsfile} alt="" width={40} height={40}/>
+                                </div>
+                              </td>
                               <td>{da.name}</td>
                               <td>{da.typefile}</td>
                               <td>{da.comments}</td>
