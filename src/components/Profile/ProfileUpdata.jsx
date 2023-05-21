@@ -7,10 +7,10 @@ import avatar from '../../assets/avatar/user.png'
 import axios from 'axios'
 const ProfileUpdata = () => {
    const {users , loading ,dispatchup } = useContext(AuthUpdataContext)
-   const {user} = useContext(AuthContext)
+   const {user,dispatch} = useContext(AuthContext)
    const [avatarUp , setAvatarUp] = useState([])
    const [image, setFileImage] = useState("")
-   const [username, setName] = useState()
+   const [username, setName] = useState([user.username])
    const [password, setPassword] = useState()
 
    const previewFile =(file)=> {
@@ -19,7 +19,7 @@ const ProfileUpdata = () => {
    reader.onloadend = () =>{
        setFileImage(reader.result)
    }
-}
+  }
    const handleChange = (e) =>{
       const file = e.target.files[0]
       setAvatarUp(file)
@@ -40,7 +40,7 @@ const ProfileUpdata = () => {
         if(username == null ){
            alert('Username No Data !' )
         } else if(password == null){
-         alert('Old Password No Data !' )
+           alert('Old Password No Data !' )
         }
         else{
          const res =  await axios.put(`${config.apiUserUpdata}/${user._id}`,data,configs)
@@ -66,13 +66,11 @@ const ProfileUpdata = () => {
            <div className='row-col'>
                <h2>Setting Profile </h2>
                   <label htmlFor="">Username</label>
-                  <small>*ต้องระบุ</small>
                   <input type="text" 
-                     id='username'
-                     name="username" 
-                     // value={datauser.username}
-                     placeholder= {user.username}
-                     onChange={e => setName(e.target.value)}/>
+                     value={username}
+                     placeholder= "username"
+                     onChange={e => setName(e.target.value)}
+                     />
                   <label htmlFor="">Old Password</label>
                   <small>*ต้องระบุ</small>
                   <input type="text" id="comments" placeholder='Old Password...' 
@@ -87,7 +85,7 @@ const ProfileUpdata = () => {
                   <div className="img-r">
                     <div className="img-sty">
                      <label className='sty-im' htmlFor='image'>  
-                        <img className='img-cover-co' src={image ? image : user.avatar_url || avatar}/>
+                        <img className='img-cover-co' src={image ? image : user?.avatar_url || avatar}/>
                         <h4 className='h4'>Edit</h4>
                      </label> 
                     </div>

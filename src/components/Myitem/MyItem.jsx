@@ -6,7 +6,7 @@ import config from '../../config.json'
 import axios from 'axios'
 import FileDownload from 'js-file-download'
 import { AuthContext } from '../context/AuthContext'
-const ItemAll = ({Data , Loading , NoData }) => {
+const ItemAll = ({Data , Loading , NoData ,setData }) => {
   const {user} = useContext(AuthContext)
   const navigator = useNavigate()
   const [Query , setQuery] = useState('')
@@ -22,12 +22,10 @@ const ItemAll = ({Data , Loading , NoData }) => {
     } 
   const handleDelete = async (da) =>{
     try{
-       Data.filter((f)=> f._id !== da._id)
+      setData(Data.filter((f)=> f._id !== da._id))
        await axios.delete(`${config.apiUserDataDelete}/${user._id}/${da._id}`)
-       alert('Delete File Upload Sucessfylly !')
-       window.location = '/my-items'
     }catch(err){
-
+     
     }
   }
 return(
@@ -73,7 +71,7 @@ return(
                                    }
                                   <button className='btn-e' onClick={() => navigator('/my-edit')}>Edit</button>
                                   <button onClick={()=> navigator(`/my-view/${da._id}/${da.name}`)} className='btn-v'>View</button>
-                                  <button onClick={ ()=>handleDelete(da)} className='btn-de'>Delete</button>
+                                  <button onClick={() => handleDelete(da)} className='btn-de'>Delete</button>
                               </td>
                           </tr>   
                       ))}

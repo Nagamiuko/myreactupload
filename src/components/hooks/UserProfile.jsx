@@ -29,6 +29,6 @@ const useFetchUser = (userid) =>{
       }
       setLoading(false)
    }
-   return {datauser , loadings , error }
+   return {datauser , loadings , error ,setDataUser }
 }
 export default useFetchUser

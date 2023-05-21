@@ -24,8 +24,8 @@ const Menubar = () => {
          </nav>
          <div className="box-u-r">
              <button onClick={setPop.bind(this,true)} className="sty-us">
-                 <img src={user.avatar_url ? user.avatar_url:avatar } alt="" width={35} height={35}/>
-                <h4 style={{marginLeft:'5px'}}>: {user.username}</h4>
+                 <img src={user?.avatar_url ? user?.avatar_url:avatar } alt="" width={35} height={35}/>
+                <h4 style={{marginLeft:'5px'}}>: {user?.username}</h4>
              </button>
               <div>
                 { pop &&  <Logout setPop={setPop}/>}

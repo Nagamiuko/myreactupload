@@ -23,12 +23,12 @@ const MyItem = () => {
          setData(data)
       }
       fetchData()
-   },[])
+   },[user._id])
       return (
          <div>
             <Header/>
             <div className="menu-center"><Menubar/></div> <br />
-              <Items Data={Datas} Loading={Loading}/>
+              <Items Data={Datas} Loading={Loading} setData={setData}/>
               <footer>
                 <Footbar/>
               </footer>
