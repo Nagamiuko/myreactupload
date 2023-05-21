@@ -85,7 +85,7 @@ const ProfileUpdata = () => {
                   <div className="img-r">
                     <div className="img-sty">
                      <label className='sty-im' htmlFor='image'>  
-                        <img className='img-cover-co' src={image ? image : user?.avatar_url || avatar}/>
+                        <img className='img-cover-co' src={image ? image : user.avatar_url || avatar}/>
                         <h4 className='h4'>Edit</h4>
                      </label> 
                     </div>
