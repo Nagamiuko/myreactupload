@@ -1,10 +1,11 @@
 {
-   "apiUrl":"https://apiupcloud2.onrender.com/api/all-fileuploads",
-   "apiDataUser":"https://apiupcloud2.onrender.com/api/all-file-user",
-   "apiUserLogin":"https://apiupcloud2.onrender.com/api/login",
-   "apiUserUpdata":"https://apiupcloud2.onrender.com/api/profile",
-   "apiUserProfile":"https://apiupcloud2.onrender.com/api/user/profile",
-   "apiUserDataDelete":"https://apiupcloud2.onrender.com/api/delete-file",
-   "apiUserCreateData":"https://apiupcloud2.onrender.com/api/create-uploads",
-   "apiDataViews":"https://apiupcloud2.onrender.com/api/item-one"
+   "apiUrl":"http://119.59.99.84:4001/api/all-fileuploads",
+   "apiDataUser":"http://119.59.99.84:4001/api/all-file-user",
+   "apiUserLogin":"http://119.59.99.84:4001/api/login",
+   "apiUserUpdata":"http://119.59.99.84:4001/api/profile",
+   "apiUserProfile":"http://119.59.99.84:4001/api/user/profile",
+   "apiUserDataDelete":"http://119.59.99.84:4001/api/delete-file",
+   "apiUserCreateData":"http://119.59.99.84:4001/api/create-uploads",
+   "apiDataViews":"http://119.59.99.84:4001/api/item-one",
+   "api_url_avatar":"http://119.59.99.84:4001/public/uploads/"
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import './StyleView.css'
 import './loading.css'
+import api_image from '../../config.json' 
 // import { Viewer , Worker } from '@react-pdf-viewer/core'
 // import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
 const Views = ({DataView,Loading}) => {
@@ -24,7 +25,7 @@ const Views = ({DataView,Loading}) => {
                Name: {DataView.name+'.'+DataView.typefile} <br />
                Comments: {DataView.comments}
                <div className="img-box">
-                   <img src={DataView.url} alt="" />
+                   <img src={api_image.api_url_avatar+DataView.fileup} alt="" />
                </div>
             </div>
             ):<div className="row">

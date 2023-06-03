@@ -9,7 +9,8 @@ import { AuthContext } from '../context/AuthContext'
 const Menubar = () => {
    const navigator = useNavigate()
    const [pop, setPop] = useState(false)
-   const { user } = useContext(AuthContext)
+   const { user , url_avatar } = useContext(AuthContext)
+   console.log(url_avatar)
   return (
     <div>
       <div className="box-bg-mm">
