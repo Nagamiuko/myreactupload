@@ -1,11 +1,11 @@
 {
-   "apiUrl":"http://119.59.99.84:4001/api/all-fileuploads",
-   "apiDataUser":"http://119.59.99.84:4001/api/all-file-user",
-   "apiUserLogin":"http://119.59.99.84:4001/api/login",
-   "apiUserUpdata":"http://119.59.99.84:4001/api/profile",
-   "apiUserProfile":"http://119.59.99.84:4001/api/user/profile",
-   "apiUserDataDelete":"http://119.59.99.84:4001/api/delete-file",
-   "apiUserCreateData":"http://119.59.99.84:4001/api/create-uploads",
-   "apiDataViews":"http://119.59.99.84:4001/api/item-one",
-   "api_url_avatar":"http://119.59.99.84:4001/public/uploads/"
+   "apiUrl":"https://119.59.99.84/api/all-fileuploads",
+   "apiDataUser":"http://119.59.99.84/api/all-file-user",
+   "apiUserLogin":"http://119.59.99.84/api/login",
+   "apiUserUpdata":"http://119.59.99.84/api/profile",
+   "apiUserProfile":"http://119.59.99.84/api/user/profile",
+   "apiUserDataDelete":"http://119.59.99.84/api/delete-file",
+   "apiUserCreateData":"http://119.59.99.84/api/create-uploads",
+   "apiDataViews":"http://119.59.99.84/api/item-one",
+   "api_url_avatar":"http://119.59.99.84/public/uploads/"
 }
